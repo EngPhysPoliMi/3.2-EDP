@@ -1,6 +1,6 @@
-# x.y - Template
+# 3.2 - Metodi Analitici e Numerici per le EDP
 
-Repository for "Template".
+Repository for "Metodi Analitici e Numerici per le EDP".
 
 
 ## Use instructions
