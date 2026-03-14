@@ -1,0 +1,16 @@
+function [x,u] = modello_misto_centrato(L,N,alpha,beta,f)
+
+h = L/N;
+x=linspace(0,L,N+1)';
+
+e = ones(N,1);
+A = h^(-2) * spdiags([-e 2*e -e], [-1 0 1], N, N);
+A(1,1) = 1/h^2;
+A(1,2) = -1/h^2;
+
+F = f(x(1:end-1));
+F(1) = F(1)/2-alpha/h; %Neumann
+F(end) = F(end)+beta/h^2; %Dirichlet
+
+u=A\F;
+u=[u; beta];

@@ -1,0 +1,13 @@
+
+function [DATI] = C_dati(test)
+
+if (test == 'Test1')
+    DATI = struct(  'name', test,...
+        'domain',           [0,1; 0,1],...
+        'force',            'sin(x).*cos(y).*exp(x.*y)',...
+        'sigma',             0,...
+        'fem',              'P1',...         % Q1 - P1
+        'nqn_1D',            4,...           % (1,2,3,4,5,6,.....)
+        'nqn_2D',            3,...           % (1,3,4,7,10,16,64)
+        'MeshType',         'TU');      % ['TS' 'TU' 'QS' 'QU']
+end
